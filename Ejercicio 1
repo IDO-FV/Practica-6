@@ -1,0 +1,48 @@
+//Franco Vazquez Ian Javier
+
+#include <stdio.h>
+
+int main() 
+{
+    float num1, num2, resultado;
+    char operador;
+
+    printf("Ingrese el primer número: ");
+    scanf("%f", &num1);
+
+    printf("Ingrese el operador (+, -, *, /): ");
+    scanf(" %c", &operador);  // nota el espacio antes de %c
+
+    printf("Ingrese el segundo número: ");
+    scanf("%f", &num2);
+
+    switch (operador) 
+    {
+        case '+':
+            resultado = num1 + num2;
+            printf("Resultado: %.2f\n", resultado);
+            break;
+        case '-':
+            resultado = num1 - num2;
+            printf("Resultado: %.2f\n", resultado);
+            break;
+        case '*':
+            resultado = num1 * num2;
+            printf("Resultado: %.2f\n", resultado);
+            break;
+        case '/':
+            if (num2 != 0)
+                resultado = num1 / num2;
+            else 
+            {
+                printf("Error: División entre cero.\n");
+                return 1;
+            }
+            printf("Resultado: %.2f\n", resultado);
+            break;
+        default:
+            printf("Operador no válido.\n");
+    }
+
+    return 0;
+}
